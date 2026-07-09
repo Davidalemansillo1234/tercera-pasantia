@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redmi 15C | Cellphone Nicaragua</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff7f0;
+    --paper: #ffffff;
+    --ink: #1b1b1b;
+    --ink-soft: #5b544d;
+    --orange: #ff5a1f;
+    --orange-dark: #e0440c;
+    --navy: #16305c;
+    --line: #ece2d6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(255,90,31,0.08), transparent 45%),
+      radial-gradient(circle at 0% 100%, rgba(22,48,92,0.06), transparent 40%);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px clamp(20px, 5vw, 56px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    position: relative;
+  }
+  .brand-mark svg { width: 22px; height: 22px; }
+  .brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1;
+  }
+  .brand-name b {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+  .brand-name span {
+    display: block;
+    font-size: 12px;
+    color: var(--orange);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+  .top nav {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(24px, 6vw, 60px) clamp(20px, 5vw, 56px);
+  }
+
+  .product {
+    width: 100%;
+    max-width: 880px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(28px, 5vw, 52px);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 36px;
+    align-items: center;
+    box-shadow: 0 20px 50px -30px rgba(22,48,92,0.35);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--navy);
+    background: rgba(22,48,92,0.07);
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.08;
+    margin: 0 0 22px 0;
+    color: var(--ink);
+  }
+
+  .specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .spec-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: var(--ink);
+  }
+  .spec-pill em {
+    font-style: normal;
+    color: var(--orange-dark);
+    margin-right: 6px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 22px;
+    border-radius: 12px;
+    width: fit-content;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta:hover { background: #0e2246; transform: translateY(-1px); }
+
+  /* Signature: hanging price tag */
+  .tag-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .tag-string {
+    width: 2px;
+    height: 34px;
+    background: var(--ink-soft);
+    opacity: 0.35;
+  }
+  .price-tag {
+    position: relative;
+    background: var(--orange);
+    color: #fff;
+    width: 190px;
+    padding: 26px 18px 22px;
+    border-radius: 14px 14px 14px 60px;
+    transform: rotate(4deg);
+    box-shadow: 0 18px 30px -14px rgba(224,68,12,0.65);
+  }
+  .price-tag::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.6) inset;
+  }
+  .price-tag .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    opacity: 0.85;
+    margin-left: 16px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .price-tag .amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin-left: 12px;
+    display: block;
+  }
+  .price-tag .edge {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100%;
+    border-radius: inherit;
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(255,255,255,0.18) 6px, rgba(255,255,255,0.18) 7px);
+    pointer-events: none;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 20px clamp(20px, 5vw, 56px) 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer strong { color: var(--ink); font-weight: 600; }
+  .note {
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    padding-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    .product { grid-template-columns: 1fr; }
+    .tag-wrap { flex-direction: row; justify-content: flex-start; }
+    .tag-string { width: 34px; height: 2px; }
+    .price-tag { transform: rotate(-2deg); }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="7" y="2" width="10" height="20" rx="2.5" stroke="#ff5a1f" stroke-width="1.6"/>
+        <line x1="10" y1="19" x2="14" y2="19" stroke="#ff5a1f" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-name">
+      <b>CELLPHONE</b>
+      <span>NICARAGUA</span>
+    </div>
+  </div>
+  <nav>XIAOMI</nav>
+</header>
+
+<main>
+  <div class="product">
+    <div>
+      <span class="eyebrow">XIAOMI</span>
+      <h1>Redmi 15C</h1>
+      <div class="specs">
+        <span class="spec-pill"><em>RAM</em>8GB</span>
+        <span class="spec-pill"><em>ROM</em>256GB</span>
+      </div>
+    </div>
+    <div class="tag-wrap">
+      <div class="tag-string"></div>
+      <div class="price-tag">
+        <div class="edge"></div>
+        <span class="label">PRECIO PUBLICO</span>
+        <span class="amount">$175</span>
+        <span class="amount">C$6,475</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>&#128205; <strong>Dirección:</strong> Barrio Sierra Maestra, del Mercado de San Judas 1km al sur, Managua, Nicaragua</span>
+  <span>&#128222; <strong>Teléfono:</strong> 7640 2906</span>
+</footer>
+<p class="note">Consultar disponibilidad. Precios varían sin previo aviso.</p>
+
+</body>
+</html>
